@@ -12,6 +12,7 @@ public class User {
     @EqualsAndHashCode.Include
     private Long id;
     private String username;
+    @ToString.Exclude
     private String password;
     private String role = "USER"; // Como é demonstrativo, podemos setar apenas uma role por usuário. Como esta como string, basta adicionarmos separando por comma
 

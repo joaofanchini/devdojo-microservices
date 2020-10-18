@@ -61,7 +61,7 @@ public class AuthUsernamePasswordFilter extends UsernamePasswordAuthenticationFi
 
         log.info("Creating authentication object for the user with username: {}", user.getUsername());
 
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user.getUsername(), user.getUsername(), Collections.emptyList());
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword(), Collections.emptyList());
         authenticationToken.setDetails(user);
 
         return authenticationManager.authenticate(authenticationToken);
@@ -94,16 +94,14 @@ public class AuthUsernamePasswordFilter extends UsernamePasswordAuthenticationFi
                 .build(); // Chave pública
 
         // Adicionando informações a serem enviadas ao header e body do token
-        SignedJWT signedJWT = new SignedJWT(new JWSHeader.Builder(JWSAlgorithm.RS256)
+        SignedJWT signedJWT = new SignedJWT(
+                new JWSHeader.Builder(JWSAlgorithm.RS256)
                 .jwk(jwtPublicKey)
                 .type(JOSEObjectType.JWT)
-                .build(), claims);
+                .build(),claims);
 
         RSASSASigner signWithPrivateKey = new RSASSASigner(keyPair.getPrivate()); //Assinando com a chave privada
-
         signedJWT.sign(signWithPrivateKey);
-
-        log.info("Serialized token {}", signedJWT.serialize());
 
         return signedJWT;
     }
