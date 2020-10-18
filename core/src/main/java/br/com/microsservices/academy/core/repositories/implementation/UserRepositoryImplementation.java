@@ -36,6 +36,6 @@ public class UserRepositoryImplementation implements UserRepository {
 
     @Override
     public Optional<User> findByUsername(String username) {
-        return Optional.empty();
+        return mockDataCourses.stream().filter(user -> user.getUsername().equals(username)).findFirst();
     }
 }

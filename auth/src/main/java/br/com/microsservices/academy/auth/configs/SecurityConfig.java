@@ -24,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final UserDetailsService userDetailsService;
 
     @Bean
-    private BCryptPasswordEncoder passwordEncoder(){
+    public BCryptPasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
 
@@ -41,7 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         ((httpServletRequest, httpServletResponse, ex) -> httpServletResponse.sendError(HttpServletResponse.SC_UNAUTHORIZED))
                 )
                 .and()
-                .addFilter(new AuthUsernamePasswordFilter()) // O Filtro que irá fazer nossa authenticação para cada requisição
+                .addFilter(new AuthUsernamePasswordFilter(jwtProperty)) // O Filtro que irá fazer nossa authenticação para cada requisição
                 .authorizeRequests()
                     .antMatchers(jwtProperty.getLoginUrl()).permitAll()
                     .antMatchers("/course/admin/**").hasRole("ADMIN") // Note que pela arquitetura, o path da requisição deverá conter course, graças ao gateway
