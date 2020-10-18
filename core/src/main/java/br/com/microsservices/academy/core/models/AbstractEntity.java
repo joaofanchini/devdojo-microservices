@@ -1,4 +1,4 @@
-package br.com.microsservices.academy.course.data.models;
+package br.com.microsservices.academy.core.models;
 
 import java.io.Serializable;
 

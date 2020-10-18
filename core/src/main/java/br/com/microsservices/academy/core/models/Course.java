@@ -1,4 +1,4 @@
-package br.com.microsservices.academy.course.data.models;
+package br.com.microsservices.academy.core.models;
 
 import lombok.*;
 
@@ -8,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
-public class Course extends BaseModel{
+public class Course{
     @EqualsAndHashCode.Include
     private Long id;
     private String title;

@@ -1,4 +1,4 @@
-package br.com.microsservices.academy.course.dtos.request;
+package br.com.microsservices.academy.core.request;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;

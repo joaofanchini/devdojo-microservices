@@ -1,8 +1,8 @@
-package br.com.microsservices.academy.course.data.repositories.implementation;
+package br.com.microsservices.academy.core.repositories.implementation;
 
-import br.com.microsservices.academy.course.data.models.Course;
-import br.com.microsservices.academy.course.data.repositories.CourseRepository;
-import br.com.microsservices.academy.course.dtos.request.PageableDTO;
+import br.com.microsservices.academy.core.models.Course;
+import br.com.microsservices.academy.core.repositories.CourseRepository;
+import br.com.microsservices.academy.core.request.PageableDTO;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

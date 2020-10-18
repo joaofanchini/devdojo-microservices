@@ -14,15 +14,13 @@
     <artifactId>devdojo</artifactId>
     <version>1.0</version>
 
-    <properties>
-        <java.version>11</java.version>
-    </properties>
-
     <modules>
         <module>course</module>
+        <module>core</module>
     </modules>
 
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>

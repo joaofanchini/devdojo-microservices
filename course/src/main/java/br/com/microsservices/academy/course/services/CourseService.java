@@ -1,14 +1,12 @@
 package br.com.microsservices.academy.course.services;
 
-import br.com.microsservices.academy.course.data.models.Course;
-import br.com.microsservices.academy.course.data.repositories.CourseRepository;
-import br.com.microsservices.academy.course.dtos.request.PageableDTO;
+import br.com.microsservices.academy.core.models.Course;
+import br.com.microsservices.academy.core.repositories.CourseRepository;
+import br.com.microsservices.academy.core.request.PageableDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.awt.print.Pageable;
 
 @Slf4j
 @Service

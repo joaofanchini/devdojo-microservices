@@ -1,7 +1,7 @@
 package br.com.microsservices.academy.course.controllers;
 
-import br.com.microsservices.academy.course.data.models.Course;
-import br.com.microsservices.academy.course.dtos.request.PageableDTO;
+import br.com.microsservices.academy.core.models.Course;
+import br.com.microsservices.academy.core.request.PageableDTO;
 import br.com.microsservices.academy.course.services.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
