@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({"br.com.microsservices.academy.core"})
+@ComponentScan({"br.com.microsservices.academy.core","br.com.microsservices.academy.course"})
 public class CourseApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CourseApplication.class, args);
