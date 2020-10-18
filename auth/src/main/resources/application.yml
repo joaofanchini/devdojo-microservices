@@ -13,6 +13,4 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8081/eureka/ # Endereço Eureka Server
-      fetch-registry: true # Indica a transformação para obtençao do endereço do serviço pelo EurekaServer
       register-with-eureka: true # Indica o registro no Eureka Server
-
