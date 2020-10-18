@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    @Description("Responsável por fazer a authenticação chamando o método findByUserName pelo userDetailsService")
+    @Description("Responsável por fazer a authenticação chamando o método findByUserName pela implementação do UserDetailsService")
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService)
             .passwordEncoder(passwordEncoder());
