@@ -8,11 +8,10 @@
 		<version>1.0</version>
 		<relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
 	</parent>
-
-	<artifactId>course</artifactId>
+	<artifactId>auth</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>course</name>
-	<description>Course Service - Spring Boot Microservices with DevDojo</description>
+	<name>auth</name>
+	<description>Authentication Service - Spring Boot Microservices with DevDojo</description>
 
 	<properties>
 		<java.version>11</java.version>
@@ -20,14 +19,19 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>br.com.microsservices.academy</groupId>
-			<artifactId>core</artifactId>
-			<version>1.0</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
 	<build>
-		<finalName>course</finalName>
+		<finalName>auth</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

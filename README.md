@@ -18,6 +18,7 @@ irão tentar realizar uma requisição ao Eureka server buscando se registrar.
  - [Spring Configuration Processor](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#configuration-metadata-annotation-processor)
  - [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#using-boot-devtools)
  - [Spring Web](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications)
+ - [Spring Security](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#boot-features-security)
  - [Service Registration and Discovery](https://spring.io/guides/gs/service-registration-and-discovery/)
  - [Routing and Filtering](https://spring.io/guides/gs/routing-and-filtering/)
  
