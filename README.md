@@ -20,7 +20,7 @@ irão tentar realizar uma requisição ao Eureka server buscando se registrar.
  - [Spring Web](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications)
  - [Spring Security](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#boot-features-security)
  - [Service Registration and Discovery](https://spring.io/guides/gs/service-registration-and-discovery/)
- - [Routing and Filtering](https://spring.io/guides/gs/routing-and-filtering/)
+ - [Routing and Filtering with Netflix Zuul](https://spring.io/guides/gs/routing-and-filtering/)
  
 ## Padrões utilizados relativo a montagem da arquitetura
 
@@ -51,7 +51,7 @@ fonte: *[DevDojo](https://www.youtube.com/playlist?list=PL62G310vn6nH_iMQoPMhIlK
 ## Referências:
 
 *A arquitetura de modelo foi baseada de acordo com o curso disponibilizado pelo 
-**[DevDojo](https://www.youtube.com/playlist?list=PL62G310vn6nH_iMQoPMhIlK_ey1npyUUl)***
+**[DevDojo](http://devdojo.academy/)***
  
 
 
