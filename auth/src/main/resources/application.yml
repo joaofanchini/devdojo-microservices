@@ -1,0 +1,18 @@
+# Note que este serviço não possui um contexto, e isso é por que o API Gateway utiliza o nome da aplicação como contexto.
+
+server:
+  port: 8083
+
+spring:
+  application:
+    name: auth
+
+eureka:
+  instance:
+    prefer-ip-address: true # Para caso esteja utilizando alguma vpn.
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka/ # Endereço Eureka Server
+      fetch-registry: true # Indica a transformação para obtençao do endereço do serviço pelo EurekaServer
+      register-with-eureka: true # Indica o registro no Eureka Server
+
