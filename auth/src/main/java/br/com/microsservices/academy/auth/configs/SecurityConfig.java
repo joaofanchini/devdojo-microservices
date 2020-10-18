@@ -12,7 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-@EnableWebSecurity
+@EnableWebSecurity // Anotação necessária para aplicação do Spring Security
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final JwtProperty jwtProperty;
@@ -31,7 +31,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     @Description("Responsável por fazer a authenticação chamando o método findByUserName pelo userDetailsService")
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        super.configure(auth);
+        auth.userDetailsService(userDetailsService)
+            .passwordEncoder(passwordEncoder());
     }
 
 }

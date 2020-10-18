@@ -17,9 +17,9 @@ public class UserRepositoryImplementation implements UserRepository {
 
     public UserRepositoryImplementation() {
         mockDataCourses = Arrays.asList(
-                new User(1L,"jonny","123"),
-                new User(2L,"joao","456"),
-                new User(3L,"john","789")
+                new User(1L,"jonny","123","USER"),
+                new User(2L,"joao","456","USER"),
+                new User(3L,"john","789","USER")
         );
     }
 
@@ -32,5 +32,10 @@ public class UserRepositoryImplementation implements UserRepository {
         int finalIndex = (pageSize * pageNumber);
 
         return Optional.of(mockDataCourses.subList(finalIndex - intervalIndex, finalIndex)).orElse(new ArrayList<>());
+    }
+
+    @Override
+    public Optional<User> findByUsername(String username) {
+        return Optional.empty();
     }
 }
