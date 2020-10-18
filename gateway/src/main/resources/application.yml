@@ -18,3 +18,8 @@ eureka:
 
 zuul:
   sensitive-headers: Cookie # Caso não indicado, ele remove esse header ao repassar a requisição.
+
+# Configuração necessária para o gateway, pois ele utiliza o application.name dos serivços e o context path para as requisições
+jwt:
+  config:
+    login-url: /auth/login

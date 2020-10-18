@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                     .antMatchers(jwtProperty.getLoginUrl()).permitAll()
-                    .antMatchers("/course/admin/**").hasRole("ADMIN") // Note que pela arquitetura, o path da requisição deverá conter course, graças ao gateway
+                    .antMatchers("/course/v1/admin/**").hasRole("ADMIN") // Note que pela arquitetura, o path da requisição deverá conter course, graças ao gateway
                     .anyRequest().authenticated();
     }
 }

@@ -4,11 +4,10 @@ import br.com.microsservices.academy.core.models.User;
 import com.nimbusds.jose.JOSEException;
 import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.SignedJWT;
-import jdk.internal.joptsimple.internal.Strings;
-import jdk.jfr.Description;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Description;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -31,7 +30,7 @@ public class SecurityContextUtil {
             User user = new User(
                     claims.getLongClaim("userId"),
                     username,
-                    Strings.join(authorities, ",")
+                    String.join(",",authorities)
             );
 
             // Precisamos adicionar essas roles aqui, pois o filtro irá atuar juntamente com o filtro, que faz a validação pelas Roles

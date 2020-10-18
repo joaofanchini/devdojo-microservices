@@ -4,7 +4,6 @@ import br.com.microsservices.academy.core.properties.JwtProperty;
 import br.com.microsservices.academy.security.helpers.TokenParserHelper;
 import br.com.microsservices.academy.security.utils.SecurityContextUtil;
 import com.nimbusds.jwt.SignedJWT;
-import jdk.internal.joptsimple.internal.Strings;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
@@ -24,8 +23,8 @@ import java.io.IOException;
 @Description("Responsável por ser executado a cada nova requisição, apenas uma vez. Lembrar que em segurança, trabalhamos com dois filtros, um para autenticação e outro para autorização")
 public class JwtAuthorizationFilter extends OncePerRequestFilter {
 
-    private final JwtProperty jwtProperty;
-    private final TokenParserHelper tokenParserHelper;
+    protected final JwtProperty jwtProperty;
+    protected final TokenParserHelper tokenParserHelper;
 
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest httpServletRequest, @NonNull HttpServletResponse httpServletResponse, @NonNull FilterChain filterChain) throws ServletException, IOException {
@@ -37,7 +36,7 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
             return;
         }
 
-        String jweToken = authorizationHeaderValue.trim().replace(jwtProperty.getHeader().getPrefix(), Strings.EMPTY);
+        String jweToken = authorizationHeaderValue.trim().replace(jwtProperty.getHeader().getPrefix(), "");
 
         SecurityContextUtil.setSecurityContext(StringUtils.equalsIgnoreCase(jwtProperty.getType(),"signed") ? justValidate(jweToken) : decryptAndValidate(jweToken));
 
