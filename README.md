@@ -7,6 +7,7 @@ Projeto visando o estudo da arquitetura baseada em Microsserviços para criaçã
  - [Lombok]()
  - [Spring Boot]()
  - [Spring Cloud]()
+ - [Spring Validation]()
  - [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
  - [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.1.17.RELEASE/maven-plugin/)
  - [Spring Configuration Processor](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#configuration-metadata-annotation-processor)
