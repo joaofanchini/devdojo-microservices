@@ -1,1 +1,10 @@
+# Note que este serviço não possui um contexto, e isso é por que o API Gateway utiliza o nome da aplicação como contexto.
 
+server:
+  port: 8080
+
+spring:
+  application:
+    name: course
+  jmx:
+    enabled: false
