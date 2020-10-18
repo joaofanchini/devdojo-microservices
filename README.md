@@ -14,7 +14,7 @@ Projeto visando o estudo da arquitetura baseada em Microsserviços para criaçã
  - [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#using-boot-devtools)
  - [Spring Web](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications)
  - [Service Registration and Discovery](https://spring.io/guides/gs/service-registration-and-discovery/)
- 
+ - [Routing and Filtering](https://spring.io/guides/gs/routing-and-filtering/)
  
 ## Padrões utilizados relativo a montagem da arquitetura
 
