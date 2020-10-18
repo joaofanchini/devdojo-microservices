@@ -2,7 +2,7 @@ package br.com.microsservices.academy.auth.filters;
 
 import br.com.microsservices.academy.core.models.User;
 import br.com.microsservices.academy.core.properties.JwtProperty;
-import br.com.microsservices.academy.security.helpers.TokenCreateHelper;
+import br.com.microsservices.academy.security.helpers.TokenCreatorHelper;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nimbusds.jwt.SignedJWT;
 import lombok.RequiredArgsConstructor;
@@ -31,7 +31,7 @@ public class AuthUsernamePasswordFilter extends UsernamePasswordAuthenticationFi
 
     private final JwtProperty jwtProperty;
     private final AuthenticationManager authenticationManager;
-    private final TokenCreateHelper tokenCreateHelper;
+    private final TokenCreatorHelper tokenCreatorHelper;
 
     @Description("Método responsável por tentar realizar a autenticação do usuário. a anotação @SneakyThrows excapsula qualquer tipo de exceção em um" +
             "try catch, lançando um runtime." +
@@ -59,9 +59,9 @@ public class AuthUsernamePasswordFilter extends UsernamePasswordAuthenticationFi
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication auth) {
         log.info("Authentication successful for the user {}. Generating token",auth.getPrincipal());
 
-        SignedJWT signedJwt = tokenCreateHelper.createSignedJwt(auth);
+        SignedJWT signedJwt = tokenCreatorHelper.createSignedJwt(auth);
 
-        String tokenEncrypted = tokenCreateHelper.encryptTokenToJwe(signedJwt);
+        String tokenEncrypted = tokenCreatorHelper.encryptTokenToJwe(signedJwt);
 
         response.addHeader("Access-Control-Expose-Headers","XSRF-TOKEN, ".concat(jwtProperty.getHeader().getName())); // Headers para o browser permitir a requisição
 
