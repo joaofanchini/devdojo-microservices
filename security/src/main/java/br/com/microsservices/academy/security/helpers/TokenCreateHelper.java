@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class JwtHelper {
+public class TokenCreateHelper {
 
     private final JwtProperty jwtProperty;
 
