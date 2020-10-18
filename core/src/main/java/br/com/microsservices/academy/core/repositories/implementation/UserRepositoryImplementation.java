@@ -17,9 +17,9 @@ public class UserRepositoryImplementation implements UserRepository {
 
     public UserRepositoryImplementation() {
         mockDataCourses = Arrays.asList(
-                new User(1L,"jonny","123","USER"),
-                new User(2L,"joao","456","USER"),
-                new User(3L,"john","789","USER")
+                new User(1L,"jonny","$2a$10$XXFr7Bp3r3Y1iXdzcEIRreoqL.berHEt5JJIJm9AJNlcTdsynCK0q","USER"), //password: 123
+                new User(2L,"joao","$2a$10$lL/xm2vG3qAyUyUbIb3rZeoQoQOak9S2KdNmG3DJ08LQseK0hG7wm","USER"), //password: 456
+                new User(3L,"john","$2a$10$BYuan7zdLYzGDqpKPnx8g.3iLSdFbSFVKJu.9rVrfO2WFjHqfvIFa","ADMIN") //password: 789
         );
     }
 

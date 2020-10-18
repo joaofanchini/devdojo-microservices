@@ -15,6 +15,7 @@ import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Description;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -43,6 +44,7 @@ import java.util.stream.Collectors;
 public class AuthUsernamePasswordFilter extends UsernamePasswordAuthenticationFilter {
 
     private final JwtProperty jwtProperty;
+    private final AuthenticationManager authenticationManager;
 
     @Description("Método responsável por tentar realizar a autenticação do usuário. a anotação @SneakyThrows excapsula qualquer tipo de exceção em um" +
             "try catch, lançando um runtime." +
@@ -62,7 +64,7 @@ public class AuthUsernamePasswordFilter extends UsernamePasswordAuthenticationFi
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user.getUsername(), user.getUsername(), Collections.emptyList());
         authenticationToken.setDetails(user);
 
-        return getAuthenticationManager().authenticate(authenticationToken);
+        return authenticationManager.authenticate(authenticationToken);
     }
 
     @Description("Método executado quando a autenticação é bem sucedida. Em todo token primeiro você assina e depois criptografa")
