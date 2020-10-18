@@ -2,6 +2,11 @@
 
 Projeto visando o estudo da arquitetura baseada em Microsserviços para criação de sistemas. 
 
+## Start
+
+Para inicar os serviços, iniciar primeiro o *Service Discovery (Eureka Server - discovery)* pois todas os serviços
+irão tentar realizar uma requisição ao Eureka server buscando se registrar.
+
 ## Tecnologias
 
  - [Lombok](https://projectlombok.org/features/all)
@@ -36,10 +41,12 @@ fonte: *[DevDojo](https://www.youtube.com/watch?v=vxeMnM15gsI&list=PL62G310vn6nH
 
 ## Serviços
 
-Course
+ - Course
+ - Service Discovery
+ - API Gateway
 
 
-#### Referências:
+## Referências:
 
 *A arquitetura de modelo foi baseada de acordo com o curso disponibilizado pelo 
 **[DevDojo](https://www.youtube.com/watch?v=vxeMnM15gsI&list=PL62G310vn6nH_iMQoPMhIlK_ey1npyUUl)***

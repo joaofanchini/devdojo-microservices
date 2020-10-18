@@ -4,4 +4,17 @@ spring:
 
 server:
   port: 8080
+  servlet:
+    context-path: /gateway
 
+eureka:
+  instance:
+    prefer-ip-address: true # Para caso esteja utilizando alguma vpn.
+  client:
+    service-url:
+      defaultZone: http://localhost:8081 # Endereço Eureka Server
+      fetch-registry: true # Indica a transformação para obtençao do endereço do serviço pelo EurekaServer
+      register-with-eureka: true # Indica o registro no Eureka Server
+
+zuul:
+  sensitive-headers: Cookie # Caso não indicado, ele remove esse header ao repassar a requisição.
