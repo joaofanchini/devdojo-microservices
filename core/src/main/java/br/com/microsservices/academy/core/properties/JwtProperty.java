@@ -26,6 +26,6 @@ public class JwtProperty {
     @NoArgsConstructor
     public static class Header{
         private String name = "Authorization";
-        private String value = "Bearer ";
+        private String prefix = "Bearer ";
     }
 }

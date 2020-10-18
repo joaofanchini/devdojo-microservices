@@ -67,8 +67,16 @@ public class AuthUsernamePasswordFilter extends UsernamePasswordAuthenticationFi
 
     @Description("Método executado quando a autenticação é bem sucedida. Em todo token primeiro você assina e depois criptografa")
     @Override
-    protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
-        log.info("Authentication successful for the user {}. Generating token",authResult.getPrincipal());
+    protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication auth) throws IOException, ServletException {
+        log.info("Authentication successful for the user {}. Generating token",auth.getPrincipal());
+
+        SignedJWT signedJwt = createSignedJwt(auth);
+
+        String tokenEncrypted = encryptTokenToJwe(signedJwt);
+
+        response.addHeader("Access-Control-Expose-Headers","XSRF-TOKEN, ".concat(jwtProperty.getHeader().getName())); // Headers para o browser permitir a requisição
+
+        response.addHeader(jwtProperty.getHeader().getName(), jwtProperty.getHeader().getPrefix().concat(tokenEncrypted)); // Retornando o token da requisição no header
 
     }
 
@@ -119,7 +127,8 @@ public class AuthUsernamePasswordFilter extends UsernamePasswordAuthenticationFi
     }
 
     @Description("Encriptar token criptografado com as propriedades definidas com JWT  (o que vira o JWE)")
-    private String encryptTokenToJwe(SignedJWT signedJWT) throws JOSEException {
+    @SneakyThrows
+    private String encryptTokenToJwe(SignedJWT signedJWT) {
         DirectEncrypter directEncrypter = new DirectEncrypter(jwtProperty.getPrivateKey().getBytes()); // Modelo de encriptação direta
 
         JWEObject jweObject = new JWEObject(new JWEHeader.Builder(JWEAlgorithm.DIR, EncryptionMethod.A128CBC_HS256)
