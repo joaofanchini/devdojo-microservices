@@ -45,6 +45,7 @@ fonte: *[DevDojo](https://www.youtube.com/watch?v=vxeMnM15gsI&list=PL62G310vn6nH
  - Course
  - Service Discovery
  - API Gateway
+ - Authentication Service
 
 
 ## Referências:

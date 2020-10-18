@@ -48,7 +48,7 @@ public class AuthUsernamePasswordFilter extends UsernamePasswordAuthenticationFi
         return getAuthenticationManager().authenticate(authenticationToken);
     }
 
-    @Description("Método executado quando a autenticação é bem sucedida")
+    @Description("Método executado quando a autenticação é bem sucedida. Em todo token primeiro você assina e depois criptografa")
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
         log.info("Authentication successful for the user {}. Generating token",authResult.getPrincipal());
