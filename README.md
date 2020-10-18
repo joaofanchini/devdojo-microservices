@@ -4,8 +4,13 @@ Projeto visando o estudo da arquitetura baseada em Microsserviços para criaçã
 
 ## Start
 
-Para inicar os serviços, iniciar primeiro o *Service Discovery (Eureka Server - discovery)* pois todas os serviços
+* Para inicar os serviços, iniciar primeiro o *Service Discovery (Eureka Server - discovery)* pois todas os serviços
 irão tentar realizar uma requisição ao Eureka server buscando se registrar.
+
+* Usuários para login:
+    - username: jonny | password: 123 -> Role: USER
+    - username: joao | password: 456 -> Role: USER
+    - username: john | password: 789 -> Role: ADMIN
 
 ## Tecnologias
 
