@@ -36,7 +36,7 @@ public class TokenParserHelper {
 
     @Description("Validar token de acordo com a chave pública enviada")
     @SneakyThrows
-    public void validateToken(String jwtToken){
+    public SignedJWT validateToken(String jwtToken){
         log.info("Validating JWT token");
 
         SignedJWT jwtTokenParsed = SignedJWT.parse(jwtToken);
@@ -45,5 +45,7 @@ public class TokenParserHelper {
 
         if(!jwtTokenParsed.verify(new RSASSAVerifier(publicKey)))
             throw new AccessDeniedException("Invalid token signature");
+
+        return jwtTokenParsed;
     }
 }

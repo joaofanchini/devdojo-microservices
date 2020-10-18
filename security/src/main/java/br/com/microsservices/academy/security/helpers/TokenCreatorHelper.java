@@ -61,6 +61,7 @@ public class TokenCreatorHelper {
         return  new JWTClaimsSet.Builder()
                 .subject(user.getUsername())
                 .claim("authorities",auth.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList()))
+                .claim("userId",user.getId())
                 .issuer("https://github.com/joaofanchini/devdojo-microservices")
                 .issueTime(new Date())
                 .expirationTime(new Date(System.currentTimeMillis() + (jwtProperty.getExpiration()*1000)))

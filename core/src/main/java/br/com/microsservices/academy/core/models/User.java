@@ -21,4 +21,10 @@ public class User {
         this.password = user.getPassword();
         this.role = user.getRole();
     }
+
+    public User(Long id, String username, String role) {
+        this.id = id;
+        this.username = username;
+        this.role = role;
+    }
 }
